@@ -63,11 +63,11 @@ u16 Controller::GetControllerInput(u16 buttons)
         buttons |= TH_BUTTON_SHOOT;
         isShooting = TH_BUTTON_SHOOT;
     }
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_WEST))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_NORTH))
     {
         buttons |= TH_BUTTON_BOMB;
     }
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_SOUTH))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_EAST))
     {
         buttons |= TH_BUTTON_FOCUS;
     }
@@ -76,7 +76,7 @@ u16 Controller::GetControllerInput(u16 buttons)
         buttons |= TH_BUTTON_MENU;
     }
     // R is the dialogue skip (Ctrl on PC). Held, not tapped, as in the original.
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_EAST))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_SOUTH))
     {
         buttons |= TH_BUTTON_SKIP;
     }
