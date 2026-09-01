@@ -58,16 +58,16 @@ u16 Controller::GetControllerInput(u16 buttons)
     SDL_Gamepad *pad = g_Supervisor.controller;
     u32 isShooting = 0;
 
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_EAST))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER))
     {
         buttons |= TH_BUTTON_SHOOT;
         isShooting = TH_BUTTON_SHOOT;
     }
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_SOUTH))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_WEST))
     {
         buttons |= TH_BUTTON_BOMB;
     }
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_LEFT_SHOULDER))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_SOUTH))
     {
         buttons |= TH_BUTTON_FOCUS;
     }
@@ -76,7 +76,7 @@ u16 Controller::GetControllerInput(u16 buttons)
         buttons |= TH_BUTTON_MENU;
     }
     // R is the dialogue skip (Ctrl on PC). Held, not tapped, as in the original.
-    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER))
+    if (SDL_GetGamepadButton(pad, SDL_GAMEPAD_BUTTON_EAST))
     {
         buttons |= TH_BUTTON_SKIP;
     }
